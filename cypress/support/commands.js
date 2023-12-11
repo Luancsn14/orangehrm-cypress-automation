@@ -11,10 +11,10 @@ Cypress.Commands.add('login', () => {
       .click()
 })
 
-Cypress.Commands.add('logout', ()=> {
-cy.get('.oxd-topbar-header-userarea')
-        .click()
-      cy.get('.oxd-userdropdown-link')
-        .contains('Logout')
-        .click()
+Cypress.Commands.add('logout', () => {
+  cy.get('.oxd-topbar-header-userarea')
+    .click()
+  cy.get('.oxd-userdropdown-link')
+    .contains('Logout')
+    .click()
 })

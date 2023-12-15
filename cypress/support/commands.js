@@ -18,3 +18,18 @@ Cypress.Commands.add('logout', () => {
     .contains('Logout')
     .click()
 })
+
+Cypress.Commands.add('post', (postText) => {
+  cy.intercept(
+    'GET',
+    '**/feed?limit=*',
+  ).as('getPost')  
+
+  cy.get('.oxd-buzz-post-input')
+    .type(postText)
+
+  cy.get('.oxd-buzz-post-slot > .oxd-button')
+    .click() 
+
+  cy.wait('@getPost')
+})

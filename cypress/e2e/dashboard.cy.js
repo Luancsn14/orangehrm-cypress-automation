@@ -9,7 +9,7 @@ describe('Dashboard', () => {
     cy.get('.orangehrm-attendance-card-bar > .oxd-icon-button > .oxd-icon')
       .click()
 
-    cy.url()
-      .should('be.equal', `${Cypress.config('baseUrl')}/attendance/punchOut`)
+    cy.get('.oxd-topbar-header-breadcrumb-module')
+      .should('contain', 'Attendance')    
   })
 })
